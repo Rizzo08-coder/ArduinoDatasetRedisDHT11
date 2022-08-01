@@ -23,7 +23,6 @@
 DHT dht(DHTPIN, DHTTYPE);
 WiFiClient redisConn;
 Redis redis(redisConn);
-//int ntemp;
 
 //per ottenere ora attuale collegandomi a server NTP
 const char* ntpServer = "pool.ntp.org";
@@ -66,12 +65,8 @@ void setup()
         return;
     }
     dht.begin();
-//    ntemp=0;
 
     configTime(gmtOffset_sec, daylightOffset_sec, ntpServer); //configuro ora attuale con parametri inseriti
-    //char currentTime[15];
-    //getCurrentTime(currentTime);
-    //Serial.println(currentTime);
   
 }
 
@@ -125,15 +120,7 @@ void loop()
   else{
     Serial.println("key roomHum load falue");
   }
-  
-  
-  //ntemp++;
+
   memset(currentTime, 0, sizeof(currentTime));
   delay(5000);
- 
-
-  //temperatura completata
-
-
-  //fare dataset umiditá 
 }
